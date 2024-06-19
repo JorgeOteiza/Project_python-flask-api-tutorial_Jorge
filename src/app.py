@@ -1,10 +1,17 @@
 from flask import Flask # type: ignore
+from flask import Flask, jsonify # type: ignore
 app = Flask(__name__)
 
 
+# Variable global todos
+todos = [
+    { "label": "My first task", "done": False },
+    { "label": "My second task", "done": False }
+]
+
 @app.route('/todos', methods=['GET'])
-def hello_world():
-    return "<h1>Hello!</h1>"
+def get_todos():
+    return jsonify(todos)
 
 
 # Estas dos líneas siempre deben estar al final de tu archivo app.py
