@@ -2,5 +2,12 @@
     "editor.minimap.enabled": false,
     "workbench.editorAssociations": {   
         "*.md": "vscode.markdown.preview.editor"
-    }
+    },
+    "cSpell.words": [
+        "archivo",
+        "deben",
+        "estar",
+        "myroute",
+        "siempre"
+    ]
 }
