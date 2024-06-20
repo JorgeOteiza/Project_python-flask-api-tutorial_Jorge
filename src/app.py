@@ -27,6 +27,18 @@ def add_new_todo():
     # Devolver la lista actualizada
     return jsonify(todos)
 
+@app.route('/todos/<int:position>', methods=['DELETE'])
+def delete_todo(position):
+    print("This is the position to delete:", position)
+    # Eliminar el todo de la lista
+    if 0 <= position < len(todos):
+        todos.pop(position)
+    else:
+        return jsonify({"error": "Invalid position"}), 400
+    
+    # Devolver la lista actualizada
+    return jsonify(todos)
+
 
 # Estas dos líneas siempre deben estar al final de tu archivo app.py
 
